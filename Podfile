@@ -10,7 +10,7 @@ target 'ElmenusTask' do
   pod 'SwifterSwift', :git => 'https://github.com/SwifterSwift/SwifterSwift.git', :tag => '4.2.0'
   pod 'SDWebImage'
   pod 'Hero'
-
+  pod 'RealmSwift'
 
 
 

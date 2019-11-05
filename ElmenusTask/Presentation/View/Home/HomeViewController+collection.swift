@@ -26,11 +26,10 @@ extension HomeViewController: UICollectionViewDelegate , UICollectionViewDataSou
         }else if collectionView == itemsCollection
         {
             let cell = self.itemsCollection.dequeueReusableCell(withReuseIdentifier: "itemCollectionViewCell", for: indexPath) as! ItemCollectionViewCell
-           // let item = items[indexPath.row]
-            //cell.itemImage.sd_setImage(with: URL(string:item.photoURL!), completed: nil)
-            //cell.itemTitle.text = item.name ?? ""
-            cell.itemImage.image = UIImage(named:"AdobeStock_105994137-1024x680")
-            cell.itemImage.hero.id = "image1"
+            let item = items[indexPath.row]
+            cell.itemTitle.text = item.name
+            cell.itemImage.sd_setImage(with: URL(string:item.photoURL), completed: nil)
+            cell.itemImage.hero.id = item.name
             return cell
         }
         return UICollectionViewCell()
@@ -43,8 +42,8 @@ extension HomeViewController: UICollectionViewDelegate , UICollectionViewDataSou
             return tags.count
         }else if collectionView == itemsCollection
         {
-           // return items.count
-            return 1
+            return items.count
+
         }
         return 0
     }
@@ -54,7 +53,7 @@ extension HomeViewController: UICollectionViewDelegate , UICollectionViewDataSou
         {
             if indexPath.row  == tags.count - pagingBeforeItems
             {
-                homePresenter.getTags()
+                homePresenter.loadMoreTags()
             }
         }
     }
@@ -69,6 +68,7 @@ extension HomeViewController: UICollectionViewDelegate , UICollectionViewDataSou
         }else if collectionView == itemsCollection
         {
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "ItemDetailsViewController") as! ItemDetailsViewController
+            vc.currentItem = items[indexPath.row]
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }

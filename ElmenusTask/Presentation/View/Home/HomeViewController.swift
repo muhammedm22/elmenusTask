@@ -49,6 +49,10 @@ class HomeViewController: UIViewController {
 extension HomeViewController : HomeViewDelegate
 {
     func fetchTagsSuccessWith(tags: [Tag]) {
+        self.tags = tags
+        self.tagsCollection.reloadData()
+    }
+    func loadMoreTagsSuccess  (tags: [Tag]) {
         self.tags += tags
         self.tagsCollection.reloadData()
     }

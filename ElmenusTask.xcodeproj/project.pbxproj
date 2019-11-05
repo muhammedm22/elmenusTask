@@ -26,6 +26,7 @@
 		1874118023693CE5003871C7 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1874117F23693CE5003871C7 /* Tag.swift */; };
 		1874118223693DE2003871C7 /* TagsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1874118123693DE2003871C7 /* TagsResponse.swift */; };
 		1874118723694769003871C7 /* TagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1874118623694769003871C7 /* TagCollectionViewCell.swift */; };
+		187E3AB623721B4900B9FC31 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187E3AB523721B4900B9FC31 /* Reachability.swift */; };
 		5BDFE42182C03EA03C6DF0D6 /* Pods_ElmenusTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8457DD7D8627747C72E88864 /* Pods_ElmenusTask.framework */; };
 		62086DCD1EC6F02A2A2C945F /* Pods_ElmenusTaskUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64006E0DEF33EE9C2051F048 /* Pods_ElmenusTaskUITests.framework */; };
 		AEE6A87195F6F0929053C465 /* Pods_ElmenusTaskTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F557F9BFFE861CD470C369F3 /* Pods_ElmenusTaskTests.framework */; };
@@ -75,6 +76,7 @@
 		1874117F23693CE5003871C7 /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
 		1874118123693DE2003871C7 /* TagsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsResponse.swift; sourceTree = "<group>"; };
 		1874118623694769003871C7 /* TagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionViewCell.swift; sourceTree = "<group>"; };
+		187E3AB523721B4900B9FC31 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		64006E0DEF33EE9C2051F048 /* Pods_ElmenusTaskUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ElmenusTaskUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8457DD7D8627747C72E88864 /* Pods_ElmenusTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ElmenusTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		875E6A6E301EB75360EA0C46 /* Pods-ElmenusTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ElmenusTask.debug.xcconfig"; path = "Target Support Files/Pods-ElmenusTask/Pods-ElmenusTask.debug.xcconfig"; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 				187411552367EC14003871C7 /* LaunchScreen.storyboard */,
 				187411582367EC14003871C7 /* Info.plist */,
 				180E9F5D236B380F0071781C /* Constants.swift */,
+				187E3AB523721B4900B9FC31 /* Reachability.swift */,
 			);
 			path = ElmenusTask;
 			sourceTree = "<group>";
@@ -518,6 +521,7 @@
 				1874118723694769003871C7 /* TagCollectionViewCell.swift in Sources */,
 				183AF4C5236D07B7004AA27E /* HomeViewController+collection.swift in Sources */,
 				183AF4CC236D0B27004AA27E /* Item.swift in Sources */,
+				187E3AB623721B4900B9FC31 /* Reachability.swift in Sources */,
 				180E9F5E236B380F0071781C /* Constants.swift in Sources */,
 				1874114D2367EC12003871C7 /* AppDelegate.swift in Sources */,
 				1874118223693DE2003871C7 /* TagsResponse.swift in Sources */,

@@ -8,6 +8,6 @@
 
 import Foundation
 
-struct TagsResponse: Codable {
+class TagsResponse: Codable {
     let tags:[Tag]?
 }

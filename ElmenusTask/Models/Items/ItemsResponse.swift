@@ -9,6 +9,6 @@
 import Foundation
 
 
-struct ItemsResponse: Codable {
+class ItemsResponse: Codable {
     let items: [Item]?
 }

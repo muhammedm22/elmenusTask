@@ -7,9 +7,10 @@
 //
 
 import Foundation
+import RealmSwift
 
-struct Tag: Codable
+class  Tag: Object ,  Codable
 {
-    let tagName: String?
-    let photoURL: String?
+    @objc dynamic var  tagName: String = ""
+    @objc dynamic var  photoURL: String = ""
 }

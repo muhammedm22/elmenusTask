@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import RealmSwift
 
 class ItemsService
 {
@@ -15,9 +16,19 @@ class ItemsService
     
     func getItems(tagName:String  , completion :@escaping (_ tags:[Item]) -> ())
     {
-        getItemsFromAPIWith(tagName : tagName, completion:  { (tags) in
-            completion(tags)
-        })
+        
+        if Reachability.isConnectedToNetwork()
+        {
+            getItemsFromAPIWith(tagName : tagName, completion:  { (tags) in
+                completion(tags)
+            })
+        }else
+        {
+            getItemsFromLocalWith(tagName: tagName, completion: { (tags) in
+                completion(tags)
+            })
+        }
+
     }
     
     private func getItemsFromAPIWith(tagName:String ,  completion :@escaping (_ tags:[Item]) -> ())
@@ -32,10 +43,36 @@ class ItemsService
                 }
                 let items = try? JSONDecoder().decode(ItemsResponse.self, from: data)
                 completion(items?.items ?? [] )
+                self.setDataForItems(tags: items?.items ?? [])
             case .failure(_):
                 completion([])
             }
         })
+    }
+    
+    
+    func setDataForItems(tags:[Item])
+    {
+        let realm = try! Realm()
+        
+        for tag in tags
+        {
+            try! realm.write {
+                realm.add(tag)
+            }
+        }
+    }
+    
+func getItemsFromLocalWith(tagName:String , completion :@escaping (_ tags:[Item]) -> ()) {
+        let realm = try! Realm()
+        let items = realm.objects(Item.self).filter("name contains '\(tagName)'")
+        var array = [Item]()
+        for item in items
+        {
+            array.append(item)
+        }
+        completion(array)
+        
     }
     
 }

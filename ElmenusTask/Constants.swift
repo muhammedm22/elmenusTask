@@ -8,4 +8,4 @@
 
 import Foundation
 
-let kBaseURL = "https://elmenus-assignment.getsandbox.com/"
+let kBaseURL = "https://elmenus-task.getsandbox.com/"
